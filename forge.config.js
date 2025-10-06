@@ -39,4 +39,17 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'edu9988',
+          name: 'electronTest'
+        },
+        draft: true,        // optional: create as draft
+        prerelease: true    // optional: mark as pre-release
+      },
+    },
+  ],
 };

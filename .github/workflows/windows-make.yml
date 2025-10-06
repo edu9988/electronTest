@@ -21,7 +21,8 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          if (Test-Path package-lock.json) { npm ci } else { npm install }
 
       # Optional but recommended: verify app builds/starts in CI
       # - name: Lint / Test
@@ -37,3 +38,8 @@ jobs:
           path: |
             out/**/*
 
+      # Build AND publish in one go:
+      - name: Make & Publish
+        run: npx electron-forge publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # provided automatically
