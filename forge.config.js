@@ -39,7 +39,7 @@ module.exports = {
           name: 'electronTest'
         },
         draft: false,        // optional: create as draft
-        prerelease: true    // optional: mark as pre-release
+        prerelease: false    // optional: mark as pre-release
       },
     },
   ],
