@@ -9,17 +9,8 @@ module.exports = {
   rebuildConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
-      platforms: ['win32'],
-      config: {},
-    },
-    {
       name: '@electron-forge/maker-zip',
       platforms: ['win32'],
-    },
-    {
-      name: '@electron-forge/maker-deb',
-      config: {},
     },
   ],
   plugins: [
@@ -47,7 +38,7 @@ module.exports = {
           owner: 'edu9988',
           name: 'electronTest'
         },
-        draft: true,        // optional: create as draft
+        draft: false,        // optional: create as draft
         prerelease: true    // optional: mark as pre-release
       },
     },
